@@ -1,22 +1,22 @@
 import streamlit as st
-from PIL import Image, ImageDraw
+from streamlit_option_menu import option_menu
+import mysql.connector
 import easyocr
-import re
+from PIL import Image, ImageDraw
 import pandas as pd
 import numpy as np
+import re
 import io
-import mysql.connector
-from streamlit_option_menu import option_menu
 
 # Create Table
 connection = mysql.connector.connect(host='localhost',user='root',password='SQL@2023',
                                      database='bizcard_data',auth_plugin='mysql_native_password')
 mycursor = connection.cursor()
 
-query = ''' create table if not exists bizcard_info ( Name varchar(255),
+query = ''' create table if not exists bizcard_info ( Name varchar(255) PRIMARY KEY,
                                                         Designation varchar(255),
                                                         Company_Name varchar(255),
-                                                        Contact_Number_1 varchar(255) PRIMARY KEY,
+                                                        Contact_Number_1 varchar(255),
                                                         Contact_Number_2 varchar(255),
                                                         Email varchar(255),
                                                         Website varchar(255),
@@ -195,10 +195,10 @@ st.set_page_config(layout='wide')
 
 st.header("""Welcome to the :orange[BizCardX]""")
 st.subheader(':blue[Extracting Business Card Data with OCR]')
-st.write('''Extracting Business Card Data with OCR" automates the capture of contact details from 
-         business cards using Optical Character Recognition. Key information like names, phone numbers, 
-         and emails are digitized and stored efficiently. This process enhances accuracy and simplifies 
-         managing contacts.''')
+st.write('''This application provides a simple and efficient way to manage business card data by 
+         extracting key information from card images using Optical Character Recognition (OCR) technology. 
+         Whether you're looking to digitize your business contacts or streamline the process of organizing 
+         business card information, this tool is designed to make the process easier.''')
 
 uploaded_image = st.file_uploader(":red[Upload a Business Card 👇]", type=["jpg", "jpeg", "png"],)
 upload_store_button = st.button('Upload & Store Data', use_container_width=True)
