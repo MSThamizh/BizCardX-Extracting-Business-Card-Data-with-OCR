@@ -36,9 +36,9 @@ def highlight_img_op(image):
     image = image.convert("RGB")
     reader = easyocr.Reader(['en'])
     np_image = np.array(image)
-    results = reader.readtext(np_image)
+    img_text = reader.readtext(np_image)
     draw = ImageDraw.Draw(image)
-    for (bbox, text, prob) in results:
+    for (bbox, text, prob) in img_text:
         top_left = (int(bbox[0][0]), int(bbox[0][1]))  
         bottom_right = (int(bbox[2][0]), int(bbox[2][1])) 
         draw.rectangle([top_left, bottom_right], outline='red', width=2)    
