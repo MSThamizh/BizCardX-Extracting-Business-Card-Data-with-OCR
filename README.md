@@ -30,7 +30,7 @@ The workflow of this project can be summarized as follows:
 ## References
 
 - **Python:** [https://docs.python.org/3/](https://docs.python.org/3/)
-- **easyOCR:** [https://github.com/JaidedAI/EasyOCR](https://github.com/JaidedAI/EasyOCR)
+- **easyOCR:** [https://github.com/JaidedAI/EasyOCR](https://github.com/JaidedAI/EasyOCR) , [https://pypi.org/project/easyocr/1.1.4/](https://pypi.org/project/easyocr/1.1.4/)
 - **Pillow:** [https://pillow.readthedocs.io/en/stable/](https://pillow.readthedocs.io/en/stable/)
 - **Pandas DataFrame:** [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)
 - **MySQL Documentation:** [https://www.mysql.com/](https://www.mysql.com/)
